@@ -7,7 +7,8 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    if !self.genre.all_artist_names.include?("Drake")
+    drake = Artist.where("name = ?", "Drake").first
+    if drake.nil? 
       drake = Artist.create(name: "Drake")
     end
     drake.songs << self
