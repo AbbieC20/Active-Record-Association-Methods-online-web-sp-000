@@ -7,7 +7,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    if artists.any? {|artist| artist.name == "Drake"}
+    if !artists.any? {|artist| artist.name == "Drake"}
       drake = Artist.create(name: "Drake")
     end
     created_song = Song.create(name: self.song.name)
