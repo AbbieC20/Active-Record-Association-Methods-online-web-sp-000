@@ -9,9 +9,9 @@ class Song < ActiveRecord::Base
   def drake_made_this
     if !artists.name.include?("Drake")
       
-    end 
+    end
   end
-  
+
 end
 
 # if Drake is not already an artist
