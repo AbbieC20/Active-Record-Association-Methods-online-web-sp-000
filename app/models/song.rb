@@ -10,8 +10,7 @@ class Song < ActiveRecord::Base
     if !self.artist.any? {|artist| artist.name == "Drake"}
       drake = Artist.create(name: "Drake")
     end
-    created_song = Song.create(name: self.song.name)
-    drake.songs << created_song
+    drake.songs << self
   end
 
 end
